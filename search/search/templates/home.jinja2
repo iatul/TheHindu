@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="{{request.static_url('search:static/home.css')}}" rel="stylesheet">
+    <title>The Hindu</title>
+    
+	<script type="text/javascript">
+		function empty() {
+    	var x;
+    	x = document.getElementById("key-input").value;
+    	if (x == "") {
+    		alert('No Keywords')
+        	return false;
+    	};
+	}
+	</script>
+
+</head>
+<body>
+	<div id="container"> 
+		<img src="{{request.static_url('search:static/thehindu.jpg')}}">
+		<form action="/hindu/search" method = "get">
+  			<input type="text" id="key-input" name="keywords" placeholder="Search..." required><br>
+ 			<input type="submit" value="Search" onClick="return empty()">
+		</form>
+	</div> 
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The Hindu</title>
+    <link href="{{request.static_url('search:static/styles.css')}}" rel="stylesheet">
+</head>
+<body> 
+<a href="/hindu">Back To Home</a>
+{% if code == 200 %} 
+	<table>
+	<tr>
+    	<th>News</th>
+    	<th>Date</th>
+ 	</tr>
+    {% for result in data %}
+        <tr>
+            <td><a href="{{ result[2] }}">{{ result[1] }}</a></td>
+            <td>{{ result[3] }}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% else %}
+    <p id="error">{{code}} {{msg}}</p>
+{% endif %}
+</body>
+</html>
+
+
