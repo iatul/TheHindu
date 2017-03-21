@@ -5,7 +5,7 @@
     <link href="{{request.static_url('search:static/styles.css')}}" rel="stylesheet">
 </head>
 <body> 
-<a href="/hindu">Back To Home</a>
+<a class="back" href="/hindu">Back To Home</a>
 {% if code == 200 %} 
 	<table>
 	<tr>
@@ -20,7 +20,7 @@
     {% endfor %}
 </table>
 {% else %}
-    <p id="error">{{code}} {{msg}}</p>
+    <p class="error">{{code}} {{msg}}</p>
 {% endif %}
 </body>
 </html>

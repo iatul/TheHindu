@@ -34,4 +34,4 @@ class SearchViews:
         if 'keywords' in params:
             return search_keywords(params['keywords'])
         else:
-            return {'status':400, 'msg':'keywords are missing'}
+            return {'code':400, 'msg':'!!! keywords are missing'}

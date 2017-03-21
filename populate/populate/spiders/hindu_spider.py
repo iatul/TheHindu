@@ -37,6 +37,8 @@ class TheHindu(scrapy.Spider):
             link = sel.xpath('a/@href').extract()[0].encode('utf-8')
             text = sel.xpath('a/text()').extract()[0].encode('utf-8')
             text = ''.join([i if ord(i) < 128 and ord(i) !=39 else ' ' for i in text])
+            #text =''.join(["/"+i if ord(i) in [34,39] else i  if ord(i) < 128 else ' ' for i in text])
+
             data.append([text, link])
         print (self.date.strftime('%Y-%m-%d'),len(data))    
         start_time = timeit.default_timer()
